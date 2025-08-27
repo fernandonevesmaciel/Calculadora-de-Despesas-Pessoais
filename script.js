@@ -23,7 +23,8 @@ let myChart;
 function updateValues() {
     const amounts = transactions.map(transaction => transaction.amount);
     
-    const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
+    // Calcula o valor total antes de formatar
+    const total = amounts.reduce((acc, item) => (acc += item), 0);
     
     const income = amounts
         .filter(item => item > 0)
@@ -35,7 +36,14 @@ function updateValues() {
         -1
     ).toFixed(2);
 
-    balanceValue.innerText = `R$ ${total}`;
+    // Lógica para mudar a cor do saldo
+    if (total < 0) {
+        balanceValue.classList.add('negative-balance');
+    } else {
+        balanceValue.classList.remove('negative-balance');
+    }
+
+    balanceValue.innerText = `R$ ${total.toFixed(2)}`;
     incomeValue.innerText = `R$ ${income}`;
     expenseValue.innerText = `R$ ${expense}`;
     
