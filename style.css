@@ -1,0 +1,177 @@
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== FUNDO ===== */
+body {
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+.container {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    width: 90%;
+    max-width: 550px;
+    animation: fadeIn 0.8s ease;
+}
+
+/* ===== TITULOS ===== */
+h1, h2, h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* ===== SALDO ===== */
+.balance h2 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* ===== CARDS DE RESUMO ===== */
+.summary {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+#income-value {
+    color: #28a745;
+    font-weight: bold;
+}
+
+#expense-value {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* ===== FORMULÁRIO ===== */
+.new-transaction form {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-transaction label {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.new-transaction input,
+.new-transaction select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.new-transaction input:focus,
+.new-transaction select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 6px rgba(0,123,255,0.3);
+}
+
+.new-transaction button {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.new-transaction button:hover {
+    background-color: #0056b3;
+    transform: scale(1.03);
+}
+
+/* ===== BOTÕES DE CONTROLE ===== */
+.control-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.control-buttons button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 12px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.control-buttons button:hover {
+    background-color: #495057;
+    transform: scale(1.05);
+}
+
+/* ===== HISTÓRICO ===== */
+.transactions-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.transactions-list li {
+    background-color: #f9f9f9;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.transactions-list li:hover {
+    transform: translateX(5px);
+    background-color: #f1f1f1;
+}
+
+.transactions-list h3,
+.chart-container h3 {
+    margin-top: 25px;   /* 🔹 espaço acima do título */
+    margin-bottom: 15px; /* 🔹 espaço abaixo do título */
+    text-align: center;
+    color: #333;
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hidden {
+    display: none;
+    margin-top: 25px;
+}
+
